@@ -17,23 +17,32 @@ public class SecondTaskImpl implements TaskService {
     public void runTask() {
         logger.info("second task:");
 
-        ArrayList<Integer> randList = new ArrayList<>();
+        int arr[] = new int[10];
+        int max = 0;
+        int min = 0;
+        int maxIndex = 0;
+        int minIndex = 0;
 
-        for(int i = 0; i < 10; i++){
-            randList.add(Utilites.getRandomInt(-300,300));
+        for (int i = 0; i < 10; i++) {
+            arr[i] = Utilites.getRandomInt(-300, 300);
+
+            if (arr[i] > max) {
+                max = arr[i];
+                maxIndex = i;
+            } else if (arr[i] < min) {
+                min = arr[i];
+                minIndex = i;
+            }
+
         }
 
-        logger.debug("random array: "+randList);
+        logger.debug("random array: " + Arrays.toString(arr));
+        logger.info("array max value: " + max + " index: " + maxIndex);
+        logger.info("array min value: " + min + " index: " + minIndex);
 
-        Integer max = Collections.max(randList);
-        Integer min = Collections.min(randList);
+        int newValue = arr[minIndex] * arr[maxIndex];
+        arr[maxIndex] = newValue;
 
-        logger.info("array max value: " + max);
-        logger.info("array min value: " + min);
-
-        Integer newValue = randList.get(randList.indexOf(min)) * randList.get(randList.indexOf(max));
-        randList.set(randList.indexOf(max) , newValue  );
-
-        logger.error("new array: "+randList);
+        logger.error("new array: " + Arrays.toString(arr));
     }
 }

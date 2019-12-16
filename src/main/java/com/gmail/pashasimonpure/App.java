@@ -17,7 +17,7 @@ public class App {
     private static final Logger rootLogger  =   LogManager.getRootLogger();*/
 
 
-    public static void main( String[] args ){
+    public static void main(String[] args) {
         //consoleLogger.info( "file logger hashcode :"+fileLogger.hashCode() );
 
         TaskService service;

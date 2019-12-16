@@ -6,7 +6,11 @@ public class Utilites {
 
     private static final Random rand = new Random();
 
-    public static final Integer getRandomInt(Integer min,Integer max) {
+    public static final Integer getRandomInt(Integer min, Integer max) {
         return rand.nextInt(max - min + 1) + min;
+    }
+
+    public static final Integer getRandomInt() {
+        return rand.nextInt();
     }
 }
