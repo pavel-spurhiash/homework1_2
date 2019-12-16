@@ -21,9 +21,9 @@ public class ThirdTaskIml implements TaskService {
     private static final Logger logger = LogManager.getLogger(ThirdTaskIml.class);
     private static BufferedWriter WRITER;
 
-    private List generate(int count) {
+    private ArrayList<Car> generate(int count) {
 
-        List carList = new ArrayList<Car>();
+        ArrayList<Car> carList = new ArrayList<>();
 
         for (int i = 0; i < count; i++) {
             String name = "car#" + Utilites.getRandomInt(100, 999);
